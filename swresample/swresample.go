@@ -18,6 +18,11 @@ type (
 	AvSampleFormat C.enum_AVSampleFormat
 )
 
+const (
+	AV_SAMPLE_FMT_NONE  = C.AV_SAMPLE_FMT_NONE
+	AV_SAMPLE_FMT_DBLP  = C.AV_SAMPLE_FMT_DBLP
+)
+
 //Get the Class for Context.
 func SwrGetClass() *Class {
 	return (*Class)(C.swr_get_class())
