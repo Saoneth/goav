@@ -16,3 +16,9 @@ const (
 	AV_CH_LAYOUT_MONO   = int64(C.AV_CH_LAYOUT_MONO)
 	AV_CH_LAYOUT_STEREO = int64(C.AV_CH_LAYOUT_STEREO)
 )
+
+func AvGetDefaultChannelLayout(numChannels int) int64 {
+	num := C.int(numChannels)
+	ret := C.av_get_default_channel_layout(num)
+	return int64(ret)
+}

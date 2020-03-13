@@ -116,10 +116,6 @@ func Linesize(f *Frame) (linesize [8]int32) {
 	return
 }
 
-func NbSamples(f *Frame) int32 {
-	return int32(f.nb_samples)
-}
-
 //GetPicture creates a YCbCr image from the frame
 func GetPicture(f *Frame) (img *image.YCbCr, err error) {
 	// For 4:4:4, CStride == YStride/1 && len(Cb) == len(Cr) == len(Y)/1.
@@ -180,6 +176,16 @@ func AvSetFrame(f *Frame, w int, h int, pixFmt int) (err error) {
 		return
 	}
 	return
+}
+
+func AvSetFrameAudio(f *Frame, s int, c int, sampFmt int) {
+	f.sample_rate = C.int(s)
+	f.channel_layout = C.ulonglong(c)
+	f.format = C.int(sampFmt)
+}
+
+func AvFrameNbSamples(f *Frame) int {
+	return int32(f.nb_samples)
 }
 
 func AvFrameGetInfo(f *Frame) (width int, height int, linesize [8]int32, data [8]*uint8) {
