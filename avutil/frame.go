@@ -116,6 +116,10 @@ func Linesize(f *Frame) (linesize [8]int32) {
 	return
 }
 
+func NbSamples(f *Frame) int32 {
+	return int32(f.nb_samples)
+}
+
 //GetPicture creates a YCbCr image from the frame
 func GetPicture(f *Frame) (img *image.YCbCr, err error) {
 	// For 4:4:4, CStride == YStride/1 && len(Cb) == len(Cr) == len(Y)/1.
