@@ -395,8 +395,8 @@ func (ctxt *Context) SampleRate() int {
 	return int(ctxt.sample_rate)
 }
 
-func (ctxt *Context) ChannelLayout() int64 {
-	return int64(ctxt.channel_layout)
+func (ctxt *Context) ChannelLayout() uint64 {
+	return uint64(ctxt.channel_layout)
 }
 
 func (ctxt *Context) ScenechangeThreshold() int {
