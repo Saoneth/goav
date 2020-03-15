@@ -5,7 +5,7 @@
 //Provides some generic global options, which can be set on all the encoders and decoders.
 package avcodec
 
-//#cgo pkg-config: libavformat libavcodec libavutil libswresample
+//#cgo pkg-config: libavformat libavcodec libavutil
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <inttypes.h>
