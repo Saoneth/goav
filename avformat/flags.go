@@ -6,7 +6,7 @@
 //Supported formats (muxers and demuxers) provided by the libavformat library
 package avformat
 
-//#cgo pkg-config: libavformat libavcodec libavutil libavdevice libavfilter libswresample libswscale
+//#cgo pkg-config: libavformat libavcodec libavutil
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <inttypes.h>
