@@ -180,7 +180,7 @@ func AvSetFrame(f *Frame, w int, h int, pixFmt int) (err error) {
 
 func AvSetFrameAudio(f *Frame, s int, c int, sampFmt int) {
 	f.sample_rate = C.int(s)
-	f.channel_layout = C.ulongulong(c)
+	f.channel_layout = C.ulonglong(c)
 	f.format = C.int(sampFmt)
 }
 
