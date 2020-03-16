@@ -178,9 +178,9 @@ func AvSetFrame(f *Frame, w int, h int, pixFmt int) (err error) {
 	return
 }
 
-func AvSetFrameAudio(f *Frame, s int, c int, sampFmt int) {
+func AvSetFrameAudio(f *Frame, s int, c uint64, sampFmt int) {
 	f.sample_rate = C.int(s)
-	f.channel_layout = C.ulonglong(c)
+	f.channel_layout = C.uint64(c)
 	f.format = C.int(sampFmt)
 }
 
