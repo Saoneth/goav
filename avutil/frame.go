@@ -178,12 +178,6 @@ func AvSetFrame(f *Frame, w int, h int, pixFmt int) (err error) {
 	return
 }
 
-func AvSetFrameAudio(f *Frame, s int, c uint64, sampFmt int) {
-	f.sample_rate = C.int(s)
-	f.channel_layout = C.uint64(c)
-	f.format = C.int(sampFmt)
-}
-
 func AvFrameNbSamples(f *Frame) int {
 	return int(f.nb_samples)
 }
@@ -204,18 +198,3 @@ func AvFrameGetInfo(f *Frame) (width int, height int, linesize [8]int32, data [8
 func GetBestEffortTimestamp(f *Frame) int64 {
 	return int64(f.best_effort_timestamp)
 }
-
-// //static int get_video_buffer (Frame *frame, int align)
-// func GetVideoBuffer(f *Frame, a int) int {
-// 	return int(C.get_video_buffer(f, C.int(a)))
-// }
-
-// //static int get_audio_buffer (Frame *frame, int align)
-// func GetAudioBuffer(f *Frame, a int) int {
-// 	return C.get_audio_buffer(f, C.int(a))
-// }
-
-// //static void get_frame_defaults (Frame *frame)
-// func GetFrameDefaults(f *Frame) {
-// 	C.get_frame_defaults(*C.struct_AVFrame(f))
-// }
